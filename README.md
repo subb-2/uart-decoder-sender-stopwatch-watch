@@ -33,7 +33,8 @@ PC의 UART 터미널에서 ASCII 문자를 전송해 FPGA의 스톱워치 / 시�
 ## 🏗️ 시스템 구조
 
 ```
-![Block Diagram](assets/SW_W_UART_Sender_drawio.png)
+//![Block Diagram](assets/SW_W_UART_Sender_drawio.png)
+![Block Diagram](SW_W_UART_Sender.drawio.png)
 ```
 
 ---
