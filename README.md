@@ -33,28 +33,7 @@ PC의 UART 터미널에서 ASCII 문자를 전송해 FPGA의 스톱워치 / 시�
 ## 🏗️ 시스템 구조
 
 ```
-PC (UART Terminal)
-      │  uart_rx
-      ▼
-┌─────────────┐     ┌──────────────┐
-│  UART_RX    │────▶│ ASCII Decoder│──▶ btn 신호 (run/stop, clear, u, d)
-│  UART_TX    │◀────│ ASCII sw_set │──▶ sw 신호 toggle (mode, display 등)
-└─────────────┘     └──────────────┘
-      ▲                    │
-      │              ┌─────┴──────────────────────────────┐
-      │              ▼                                     ▼
-      │        ┌───────────┐   ┌────────────────────────────────────┐
-      │        │Control    │   │ Stopwatch Datapath / Watch Datapath│
-      │        │Unit (FSM) │   │ (24-bit 시간: hour/min/sec/msec)   │
-      │        └───────────┘   └──────────────┬─────────────────────┘
-      │                                        │
-      │                                   2x1 MUX
-      │                                        │
-      │                               ┌────────▼────────┐
-      │                               │  FND Controller │──▶ 7-Segment
-      │                               └─────────────────┘
-      │
-      │◀── ASCII Sender (현재 시각을 HH:MM:SS:ms 포맷으로 TX 송신)
+![Block Diagram](assets/SW_W_UART_Sender_drawio.png)
 ```
 
 ---
