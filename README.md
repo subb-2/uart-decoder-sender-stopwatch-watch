@@ -112,6 +112,13 @@ assign w_up_down_mux = w_uart_sw_sel ? w_ascii_up_down : sw[0];
 * **해결**: `sw[4] = 1` 설정 후 일정 시간 대기(`#1000`) → UART 전송 순서로 시나리오 수정.
 
 ---
+## 🎥 Demo Video
+
+### 🎥 Demo Video - stopwatch_watch_uart
+https://github.com/user-attachments/assets/b8882699-035a-4da2-a82b-294bbe4bd5b1
+
+### 🎥 Demo Video - stopwatch_watch_sender
+
 
 ## 📚 배운 점
 
